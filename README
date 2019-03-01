@@ -1,1 +1,21 @@
-#this is a README
+#minioctl tool is used to manage minio tenant. the install command is as follows:
+    ./install
+
+#minio usage:
+[root@node1 minioctl]# minioctl -h
+usage: minioctl [-h]
+
+                {tenant_add,tenant_del,tenant_mod,tenant_list,tenant_start,tenant_stop}
+                ...
+
+positional arguments:
+  {tenant_add,tenant_del,tenant_mod,tenant_list,tenant_start,tenant_stop}
+    tenant_add          add a minio tenant
+    tenant_del          del a minio tenant
+    tenant_mod          mod minio tenant info
+    tenant_list         list minio tenants
+    tenant_start        start minio server by tenant
+    tenant_stop         stop minio server by tenant
+
+optional arguments:
+  -h, --help            show this help message and exit

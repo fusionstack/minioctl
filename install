@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#'''
+#Step 1: download minio service
+#'''
+if [ ! -f ./minio ]; then
+    wget https://dl.minio.io/server/minio/release/linux-ppc64le/minio
+    chmod +x minio
+fi
+
+mkdir -p /opt/minio && cp minio /opt/minio/ && cp config.json /opt/minio/
+
+#'''
+#Step 2: install minioctl
+#'''
+mkdir -p /opt/minio/src/
+cp minioctl.py utils.py /opt/minio/src
+if [ ! -f "/usr/bin/minioctl" ]; then
+    ln -s /opt/minio/src/minioctl.py /usr/bin/minioctl
+    export PATH
+fi
+
+echo "minioctl install OK !"
